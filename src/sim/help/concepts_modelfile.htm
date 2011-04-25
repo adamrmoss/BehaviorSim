@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head><title>Concepts-Model File</title></head>
+<body>
+<em><strong>Model File </strong></em> <br>
+<hr size="1">
+<em>Model File</em> is a XML file which is used to save the settings of a specific application. When an application is created, an empty <em>Model File</em><br>
+will be generated and saved in the specified Application Directory. Elements of <em>Model File</em> are described as follows.
+<br>
+<p>
+<font size="2" ><strong>1. application</strong></font>
+</p>  
+It is the root element of the XML file. It has an attribute "name" meaning the 
+name of the application. 
+<p>
+<font size="2" ><strong>2. shared-parameters</strong></font>
+</p>  
+This element includes parameters shared among categories and entities. In current version, one shared parameter is the resource path.<br>
+It is the name of Resource Directory where all resources (i.e., images etc.) are stored. The value &quot;/&quot; indicates that Resource Directory is<br>
+same as Application Directory. 
+
+<p>
+<font size="2" ><strong>3. world</strong></font>
+</p>  
+It represents the virtual simulation world. It contains three child elements. "background-image" sets the back ground image name of the simulation
+world. The background-image is stored in Resource Directory. "width" and &quot;height&quot;  indicate the 2D display size (width and height) of the world. It may not be same as the actual size of the back ground image. "type" is the world type,
+Round, Open or Close. More details of world type can be found at the paper  http://cs.gsu.edu/~cscxlh/papers/SAB08_submit.pdf.
+<p>
+<font size="2" ><strong>4. categories</strong></font>
+</p>  
+It contains all categories' information. Each category is represent by a category element.
+<p>
+<font size="2" ><strong>4.1 category</strong></font>
+</p>  
+It contains information of a specific agent category. "name" is the category name.<br>
+<br>
+This element has three children elements, "display", "fields" and "methods".
+<p>
+<font size="2" ><strong>4.1.1 display</strong></font>
+</p>  
+It is the display component of the category. It is referred in the simulation 
+step, which specifies the "image"-the image drawing in each time step, "width" and &quot;height&quot; -the 
+display size (may be not the actual image size) for entities of this category, 
+and "direction" - the intial display direction (only for the first time step). 
+<p>
+<font size="2" ><strong>4.1.2 fields</strong></font>
+</p>  
+It contains all category fields (variables defined in the category class). It 
+can contain as many chilren elements as is required by the application. Each element 
+specifies a property (field). Each field has a "name"-the property name, "type"-the 
+type of the property, number or string, and the default value of the property, 
+which should be compatible with the property type, real number for number and 
+double-quoted characters for string. 
+<p>
+<font size="2" ><strong>4.1.3 methods</strong></font>
+</p>  
+It contains all user-defined method definitions. Each method definition is wrapped in a method element, which 
+has a "name"-the method name, and the method body which is represented in the format after some transformations such as 
+"& lt;" for '<'; "& gt;" for '>'; "& quot;" for double-quote; "& amp;" for '&'.
+<p> <font size="2" ><strong>4.2 entities</strong></font> </p>
+<p>It contains all system entities, each of which is an instance of corresponding category, and each of which is represented as 
+  an entity element.  </p>
+<p>Each entity element has the following attributes: displayName-name of the entity; categoryName-name of the category the entity belongs to;direction-initial moving direction; xposition and yposition are the position of the entity; and dynamics-behavior dynamics of the entity. Dynamics can be "MUTUAL" for mutual inhibition mechanism, or "COOPERATIVE" for cooperative mechanism, or &quot;DYNAMICS&quot; for general entity dynamics, or &quot;NODYNAMICS&quot; for stationary entities. <br>
+  <br>
+  Each entity element has three children elements, "display", "fields" 
+  and "entity-dynamics". The first two contain specific values for the display and 
+  fields of corresponding entity. <em>Note that, </em>the value of each field contains the default(initial)
+  value of the field which may not be same as the default value shown in the cateory definition window,
+  since it can be redefined in the system navigation tree when the application is running. 
+  The last one 
+specifies the configuration of its dynamics. The entity-dynamics element has two kinds of children elements, "behavior" (1 or more), and "coefs"/"weights". </p>
+<p>
+<font size="2" ><strong>4.2.1 display</strong></font>
+</p>
+<p>It is the display component of the entity. It is referred in the simulation step, which specifies the "image"-the image drawing in each time step, "width" and &quot;height&quot; -the display size (may be not the actual image size), and "direction" - the intial display direction (only for the first time step). It overrides the display settings of its category.</p>
+<font size="2" ><strong>4.2.2 fields</strong></font>
+</p>  
+<p>
+It contains all fields (variables defined in the category class). It 
+can contain as many chilren elements as is required by the application. Each element 
+specifies a property (field). Each field has a "name"-the property name, "type"-the 
+type of the property, number or string, and the value of the property, 
+which should be compatible with the property type, real number for number and 
+double-quoted characters for string. 
+<p>
+<font size="2" ><strong>4.2.3 entity-dynamics</strong></font>
+</p>  
+<p>
+<font size="2" ><strong>4.2.3.1 behavior</strong></font>
+</p>  
+The behavior element specifies behaviors added to this agent. It has one attribute, "name"-behavior name, which is
+among system available behaviors.
+Each behavior is represented using 
+a behavior element, which has two attributes, "name"-the behavior name, and "resumable"-the task queue is resumable or not. Each behavior element contains two child elements. "excitation"-the Java codes used to compute the behavior excitation in each time step, The action specification of a behavior is specified as &quot;action&quot;, which is also a piece of Java codes.
+<p>
+<font size="2" ><strong>4.2.3.2 coefs/weights</strong></font>
+</p>  
+It has one attribute, "dynamic"-"true" if the coefficients/weights are dynamically changed. And it also contains
+coefficients/weights as the content. If dynamic is true, it is a piece of codes. Otherwise, it is a string of coefficients
+or weights which are sperated by blanks.
+</body> 
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>API details</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+</head>
+<body>
+
+<em><strong>API details</strong></em> <br>
+<hr size="1">
+<div> 
+    <strong>Category 1) </strong>Get current simulation time. <br>
+    <br>
+    int getTime()<br>
+    <br>
+    <strong>Category 2)</strong> Various functions to get entities<br>
+    <br>
+    1. public int getMyId()<br>
+    2. public static int getEntityId(String displayName)<br>
+    3. public static int getClosestEntityInCategory(String categoryName)<br>
+    4. public static List getListOfEntitiesWithinDistance(double distance)<br>
+    5. public static List getListOfEntitiesInCategory(String categoryName)<br>
+    6. public static List getListOfCategoryEntitiesWithinDistance(String categoryName, 
+    double distance) <br>
+    7. public static int getEntityCount()<br>
+    <br>
+    <strong>Category 3) </strong>Get/Set positions and speed. <br>
+    <br>
+	1. public double getPositionX() <br>
+    2. public double getPositionY() <br>
+	3. public double getSpeed() <br>
+    4. public static double getPositionX(int entityID) <br>
+    5. public static double getPositionY(int entityID) <br>
+    6. public static Vect getPosition(int entityID) <br>
+    7. public Vect getRelativePosition(int entityID) <br>
+    8. public Vect getReverseRelativePosition(int entityID) <br>
+    9. public static double getSpeed(int entityID) <br>
+	10. public void setSpeed(double newSpeed) <br>
+	11. public static void setSpeed(int entityID, double newSpeed)<br> 
+	12. public void setPosition(double newX, double newY) <br>
+	13. public static void setPosition(int entityID, double newX, double newY) <br>
+    <br>
+    <strong>Category 4) </strong>Get/Set directions and distances. <br>
+    <br>
+	1. public double getDirection()<br>
+    2. public static double getHeadingDirection(int entityID) <br>
+    
+    3. public static double getDirectionToEntity(int entityID) <br>
+    4. public double getReverseDirectionToEntity(int myID, int otherID) <br>
+    5. public static double getDistanceToEntity(int entityID) <br>
+    6. public static double getDistanceBetweenTwoEntities(int oneID, int anotherID) 
+    <br>
+    7. public static double getClosestDistanceToCategory(String categoryName) 
+    <br>
+    8. public double getIRDistance(int entityID, double direction, double posX, 
+    double posY) <br>
+    9. public double getIRDistanceToOthers() <br>
+    10. public double getIRDistanceToCategory(double direction, double positionX, 
+    double positionY, String catName) <br>
+	11. public void setDirection(double newDirection) <br>
+	12. public static void setDirection(int entityID, double newDirection) <br>
+    <br>
+    <strong>Category 5) </strong>Get/Set for behavior network. <br>
+    <br>
+    1. public double getBehaviorActivation(String behaviorName)<br>
+    2. public void setBehaviorNetworkTable(String coefsorweights) <br>
+    3. public void setBehaviorWeight(String behaviorName, double weight) <br>
+    4. public void setBehaviorWeights(double[] weights)<br>
+    <br>
+    <strong>Category 6) </strong>Moves and turns. <br>
+    <br>
+    1. public String move(double speed, double direction)<br>
+    2. public String moveForward(double speed, double direction) <br>
+    3. public String moveBackward(double speed, double direction) <br>
+    4. public void moveTo(double x, double y) <br>
+    5. public void turnTo(double direction) <br>
+    6. public void turn(double angularSpeed) <br>
+    7. public void turnLeft(double angularSpeed) <br>
+    8. public void turnRight(double angularSpeed) <br>
+    9. public void moveForDistance(double speed, double distance) <br>
+    10. public void moveForwardForDistance(double speed, double distance) <br>
+    11. public void moveBackwardForDistance(double speed, double distance) <br>
+    12. public void turnForAngle(double angularSpeed, double totalAngle) <br>
+    13. public void turnLeftForAngle(double angularSpeed, double totalAngle) <br>
+    14. public void turnRightForAngle(double angularSpeed, double totalAngle) 
+    <br>
+	<br>
+    Functions 9 - 14 are only used as a composite action in the task queue. They 
+    will be expanded automatically to several corresponding atomic actions, such 
+    as "move" or "turn". <br>
+    <br>
+  <strong>Category 7) </strong>Get/Set property values. <br>
+    <br>
+	1. public Object getValue(String propertyName) throws Exception<br>
+	2. public double getDoubleValue(String propertyName) throws Exception <br>
+	3. public String getStringValue(String propertyName) throws Exception <br>
+	4. public void setValue(String propertyName, Object value) throws Exception <br>
+	5. public void setDoubleValue(String propertyName, double value) throws Exception <br>
+	6. public void setStringValue(String propertyName, String value) throws Exception <br>
+	7. public Object getValue(int entityID, String propertyName) throws Exception<br>
+	8. public double getDoubleValue(int entityID, String propertyName) throws Exception <br>
+	9. public String getStringValue(int entityID, String propertyName) throws Exception <br>
+	10. public void setValue(int entityID, String propertyName, Object value) throws Exception <br>
+    11. public void setDoubleValue(int entityID, String propertyName, double value) throws Exception <br>
+	12. public void setStringValue(int entityID, String propertyName, String value) throws Exception <br>
+
+    <br>
+  <strong>Category 8) </strong>Create/Remove entities. <br>  
+    <br>
+1. public static int createNewEntityInCategory(String categoryName) <br>
+2. public static void removeEntity(int entityid) <br>
+3. public static int createNewEntityByCopyEntity(int originalEntityID)<br>
+</div>
+<p>
+These methods can also be shown in method editor (Refer to page "Using method editor" for more details). For details of each function, please check <a href="../api/index.html">javadoc</a>. 
+</p>
+</body>
+</html>

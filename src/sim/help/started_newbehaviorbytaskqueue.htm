@@ -1,0 +1,32 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Creating a task queue based new behavior</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+</head>
+<body>
+
+<em><strong>Specifying behavior action through task queue</strong></em> <br>
+<hr size="1">
+<p>Behavior actions should be specified in one of the two ways. The first way 
+  does not use a task queue. "move(2.0, 0.0); turn(0.1)", for example. In this 
+  case, a single action is specified, "move(2.0, 0.0)" and "turn(0.1)" will be 
+  executed in one time step. </p>
+<p>The other way is using a task queue. "TASKQUEUE.add("move(2.0, 0.0)"); TASKQUEUE.add("turn(0.1)");" 
+  for example. In this case, "move(2.0, 0.0)" and "turn(0.1)" will be executed 
+  sequentially in two consecutive time steps.</p>
+<p> In the task-queue approach, the java code only consists of a series of statement 
+  TASKQUEUE.add(JAVA_METHOD_CALL). <br>
+  JAVA_METHOD_CALL is the call of a java method which returns a String object 
+  "SPEED, DIRECTION" used to guide the movement. SPEED is moving speed and DIRECTION 
+  is moving direction. Either is a double number. </p>
+<p>
+  In the above example, move(2.0, 0.0) is a JAVA_METHOD_CALL which return the 
+  string "2.0, 0.0" indicating the entity will move foward horizontally one step 
+  with the speed 2.0. </p>
+<p>
+  <em><strong>NOTE that</strong></em>, variables can be used in a JAVA_METHOD_CALL. For example, <br>
+  double movingSpeed = 2.0;<br>
+  TASKQUEUE.add("move("+movingSpeed+", 0.0)");</p>
+</body>
+</html>

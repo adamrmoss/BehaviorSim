@@ -1,0 +1,141 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>BehaviorSim Overview</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+</head>
+
+<body>
+<em><strong>Overview</strong></em> <br>
+<hr size="1">
+<div>
+  <p><strong>About BehaviorSim</strong><br>
+    BehaivorSim is a learning environment for behavior-based agent. It supports learning of behavior-based control by defining simulated agents in an intuitive manner corresponding to the behavior-based paradigm. It allows educators and students to develop and exercise their own behavior-based applications by setting up entities, behaviors and other primitives without involving significant programming effort. The term behavior-based agent is adapted from behavior-based robotics. Here an agent is a general term that can be a robot, an animat, an artificial agent in AI, a character in game design, or a simulated individual in social crowd simulation.
+<br><br>
+BehaviorSim is an ongoing project led by <strong>Dr. Xiaolin Hu</strong> in the computer science department at GSU. Early development of BehaviorSim was supported by a seed grant from the GSU Brain and Behavior program, in collaboration with Prof. Donald Edwards.
+  </p>
+    
+  <p><strong>Introduction to BehaviorSim environment</strong><br>
+    The BehaviorSim environment is a JAVA application with simple and user-friendly 
+    interface. The following figure shows a snapshot of the environment. Besides 
+    menus and toolbars, the environment contains several important panels. Topmost 
+    panel shows application name and the full path. The middle left panel shows 
+    the navigation tree with application configurations such as the virtual simulation 
+    world, categories, and all entities (stationary entity or autonomous agent) 
+    &amp; their specific field information. While the middle right panel shows 
+    the application editor where an entity can be easily created by simply dragging 
+    a category object into the virtual world (blue area). The bottom panel contains 
+    three regions which show version information, messages of every operation 
+    such as creating a category, and application status (i.e. created, loaded, 
+    not saved, saved, etc.) respectively. <br>
+    <br>
+    <img src="overview/env.jpg"> <br>
+    <br><br>
+	The following table shows all system commands arranged according to menu items.
+	<table style="width: 100%;" border="0" cellpadding="5" cellspacing="1" background="#FFFFFF" >
+        <tbody>
+          <tr bgcolor="CCCCCC">
+            <th width="19%">Command</th>
+            <th width="6%">Icon</th>
+            <th width="34%">Where you can find it</th>
+            <th width="13%">Short-cut</th>
+            <th width="28%">Description</th>
+          </tr>
+		  <tr  bgcolor="#FBFBFB">
+            <td width="19%" align="center">New</td>
+            <td width="6%" align="center"><img src="../ui/images/new.gif"></td>
+            <td width="34%" align="center">File menu or tool bar</td>
+            <td width="13%" align="center">CTRL-N</td>
+            <td width="28%" align="center">Create a new application</td>
+          </tr>
+		  <tr bgcolor="#FBFBFB">
+            <td width="19%" align="center">Open</td>
+            <td width="6%" align="center"><img src="../ui/images/open.gif"></td>
+            <td width="34%" align="center">File menu or tool bar</td>
+            <td width="13%" align="center">CTRL-O</td>
+            <td width="28%" align="center">Open an existing application</td>
+          </tr>
+		  <tr bgcolor="#FBFBFB">
+            <td width="19%" align="center">Save</td>
+            <td width="6%" align="center"><img src="../ui/images/save.gif"></td>
+            <td width="34%" align="center">File menu or tool bar</td>
+            <td width="13%" align="center">CTRL-S</td>
+            <td width="28%" align="center">Save current application</td>
+          </tr>
+		  <tr bgcolor="#FBFBFB">
+            <td width="19%" align="center">Save As</td>
+            <td width="6%" align="center"><img src="../ui/images/saveas.gif"></td>
+            <td width="34%" align="center">File menu or tool bar</td>
+            <td width="13%" align="center">CTRL-A</td>
+            <td width="28%" align="center">Save current application into a specified file</td>
+          </tr>
+		  <tr bgcolor="#FBFBFB">
+            <td width="19%" align="center">Recent Apps</td>
+            <td width="6%" align="center"></td>
+            <td width="34%" align="center">File menu </td>
+            <td width="13%" align="center"></td>
+            <td width="28%" align="center">Open recent applications</td>
+          </tr>
+		  <tr bgcolor="#FBFBFB">
+            <td width="19%" align="center">Exit</td>
+            <td width="6%" align="center"><img src="../ui/images/exit.gif"></td>
+            <td width="34%" align="center">File menu or tool bar </td>
+            <td width="13%" align="center">CTRL-Q</td>
+            <td width="28%" align="center">Close current application and exit the environment</td>
+          </tr>
+		  <tr bgcolor="#FBFBFB">
+            <td width="19%" align="center">Define Category</td>
+            <td width="6%" align="center"><img src="../ui/images/category.jpg"></td>
+            <td width="34%" align="center">Application menu or tool bar </td>
+            <td width="13%" align="center">CTRL-C</td>
+            <td width="28%" align="center">Categories management</td>
+          </tr>
+		  <tr bgcolor="#FBFBFB">
+            <td width="19%" align="center">Define BehaviorNetwork</td>
+            <td width="6%" align="center"><img src="../ui/images/bn.gif"></td>
+            <td width="34%" align="center">Application menu, tool bar, or popup menu </td>
+            <td width="13%" align="center">CTRL-B</td>
+            <td width="28%" align="center">Behavior network management</td>
+          </tr>
+		  <tr bgcolor="#FBFBFB">
+            <td width="19%" align="center">Start Simulation</td>
+            <td width="6%" align="center"><img src="../ui/images/execute.gif"></td>
+            <td width="34%" align="center">Application menu, tool bar, or tabbed pane </td>
+            <td width="13%" align="center">CTRL-E</td>
+            <td width="28%" align="center">Start simulation</td>
+          </tr>
+		  <tr bgcolor="#FBFBFB">
+            <td width="19%" align="center">Help</td>
+            <td width="6%" align="center"><img src="../ui/images/help.gif"></td>
+            <td width="34%" align="center">Help menu or tool bar</td>
+            <td width="13%" align="center">CTRL-H</td>
+            <td width="28%" align="center">System documentation</td>
+          </tr>
+		  <tr bgcolor="#FBFBFB">
+            <td width="19%" align="center">Schedule Task</td>
+            <td width="6%" align="center"></td>
+            <td width="34%" align="center">Help menu</td>
+            <td width="13%" align="center"></td>
+            <td width="28%" align="center">Schedule a periodic application saving task</td>
+          </tr>
+		  <tr bgcolor="#FBFBFB">
+            <td width="19%" align="center">Show Memory Usage</td>
+            <td width="6%" align="center"></td>
+            <td width="34%" align="center">Help menu</td>
+            <td width="13%" align="center"></td>
+            <td width="28%" align="center">See the status of JVM memory </td>
+          </tr>
+		  <tr bgcolor="#FBFBFB">
+            <td width="19%" align="center">About</td>
+            <td width="6%" align="center"></td>
+            <td width="34%" align="center">Help menu</td>
+            <td width="13%" align="center"></td>
+            <td width="28%" align="center">See the brief information of BehaviorSim </td>
+          </tr>
+		</tbody>
+	</table>
+</p>
+
+  </div>
+</body>
+</html>

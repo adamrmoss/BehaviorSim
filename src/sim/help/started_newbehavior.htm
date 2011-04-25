@@ -1,0 +1,65 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Creating a new behavior</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+</head>
+<body>
+
+<em><strong>Creating a new behavior</strong></em> <br>
+<hr size="1">
+There are two ways to create a new behavior. One is creating a new behavior from 
+sketch, which will be shown below. The other one is creating a new behavior by 
+copying an existing one (Refer to the page "Creating behavior by copy-and-paste"). 
+<p>1 Open the behavior network definition window.There are four ways to do this.<br>
+  1). Double click the "Entity Dynamics" node in the navigation tree. <br>
+  2). Right click the entity node and in the popup menu, select "Setup Dynamics" 
+  -> "Mutual Inhibition" <em>or</em> "Vector Sum". <br>
+  3). Select the entity node and click the "Define Entity Dynamics" item in the 
+  tool bar. <br>
+  4). Select the entity node and click the "Define Entity Dynamics" item in the 
+  menu bar. <br>
+  <br>
+  The following figure shows the approach 2), 3), 4). <br>
+  <img src="behaviornetwork/behaviornetwork-invoke.jpg"><br>
+  <br>
+  <strong>Tip</strong>: In the last two ways, the node representing the desired 
+  entity should be selected first. <br>
+  <br>
+  2 In the window, a tree (named "agent behavior tree") is shown in the top left 
+  side which displays all behaviors already existing in the behavior network of 
+  this entity. Another tree (named "system behavior tree") is shown in the bottom 
+  left side which displays all available behavior networks in the system. The 
+  behavior network is shown in the top right side and the coefficients configurations 
+  are shown in the bottom right side.<br>
+  <br>
+  <img src="behaviornetwork/behaviornetwork.jpg"> <br>
+  <br>
+  3 Click "Create New Behavior" in the popup menu.<br>
+  <br>
+  4 A behavior creation window will show in the right side. In this window, <br>
+  <strong>a.</strong> behavior name and behavior excitation are required. <em><strong>The 
+  behavior name should be unique among available behaviors.</strong></em> <br>
+  <strong>b. </strong>at the end of behavior excitation, a real number should 
+  be returned, "return myExcitation;" for example.<br>
+  <strong>c.</strong> behavior action can be empty, if there is no action associated 
+  with this behavior. Otherwise, actions should be specified in one of the two 
+  ways. The first way does not use a task queue. "move(2.0, 0.0); turn(0.1)", 
+  for example. In this case, a single action is specified, "move(2.0, 0.0)" and 
+  "turn(0.1)" will be executed in one time step. The other way is using a task 
+  queue. "TASKQUEUE.add("move(2.0, 0.0)"); TASKQUEUE.add("turn(0.1)");" for example. 
+  In this case, "move(2.0, 0.0)" and "turn(0.1)" will be executed sequentially in two consecutive time steps.<br>
+  <strong>d.</strong> in the advanced settings,if the check box "Setup non-resumable 
+  task queue" is checked, the task queue will be non-resumable for this behavior, 
+  meaning that, in each time step, the task queue will be reset and re-initialized, 
+  and the first action in the task queue will be put into execution. <br>
+  <strong></strong><br>
+  4 Click the &quot;OK&quot; button to create a new behavior. <br>Note that, type @ to bring up a list of predefined methods in specifying behavior excitation and action. <br>
+  <br>
+  <img src="behaviornetwork/create-behavior.jpg"> <br>
+  <font color='red'><strong>NOTE:</strong> The name of the behavior should be 
+  different from that of existing behaviors. A good practice is adding the name 
+  of the entity as a prefix of the behavior.<br>
+  </font> </p>
+</body>
+</html>
